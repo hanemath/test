@@ -9,12 +9,6 @@ peach : #fdcb9e
 @import url('https://fonts.googleapis.com/css2?family=Nunito&family=Raleway:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
-body { 
-    overflow-x: hidden; 
-    -webkit-font-smoothing: 
-    antialiased; margin: 0;
-}
-
 header {
     display: inline;
 }
@@ -25,13 +19,10 @@ header {
 
 
 @media screen and (min-width: 576px){
-    
-    footer {
-        padding: 10px;
-        color: #f7f7f7;
-        background-color: #30475e;
-        text-align: center;
-        font-weight: lighter;
+    body { 
+        overflow-x: hidden; 
+        -webkit-font-smoothing: 
+        antialiased; margin: 0;
     }
     
     .row {
@@ -277,7 +268,8 @@ header {
     }
     
     .about .slider-wrapper {
-        margin-top: 5vw;  
+        margin-top: 5vw;
+        width: 90vw;  
     }
     
     .about .slide-image {
@@ -459,12 +451,16 @@ header {
     }
     
     .skills .tools .icon-tech {
+        position: relative;
+        width: 80%;
+        left: 10%;
         display: flex;
         align-items: center;
         justify-content: center;
     }
     
     .skills .tools .icon-tech img {
+        width: 20%;
         position: relative;
         display: inline;
         margin: 10px 10px;
@@ -499,13 +495,17 @@ header {
         width: 100%;
         display: inline-block;
     }
+
+    .portfolio h2{
+        text-align: left;
+    }
     
     .portfolio .filters {
         position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
-        margin: 100px 0 0 0;
+        margin: 30px 0 0 0;
     }
     
     .portfolio .filters .btn {
@@ -533,17 +533,56 @@ header {
         margin: 20px 0;
     }
     
-    .portfolio .showcase .img-element {
-        position: relative;
-        width: 49%;
-        display: inline-block;
-    }
-    
     .portfolio .showcase .capt {
-        display: inline;
+        display: inline-block;
+        width: 45%;
         position: relative;
-        margin: 20px;
+        margin: 20px 20px;
         box-shadow: 0 40px 40px 0 darkgray;
+    }
+
+    .contacts {
+        position: relative;
+        width: 100%;
+        display: inline-block;
+        margin: 80px 0 0 40px;
+    }
+
+    .contacts .email {
+        margin: 100px 150px;
+    }
+
+    .contacts h2{
+        text-align: center;
+        font-weight: 700;
+        margin-left: 0;
+    }
+
+    .contacts .email label{
+        font-size: 19px;
+        font-weight: 600;
+    }
+
+    .contacts .email .form-control{
+        box-shadow: 0 10px 10px 0 darkgray;
+        background-color: #cceabb;
+        border: #cceabb;
+    }
+
+    .contacts .email .btn-email {
+        box-shadow: 0 10px 10px 0 darkgray;
+        border-color: #30475e;
+        background-color: #30475e;
+        color: #f7f7f7;
+        float: right;
+    }
+
+    footer {
+        padding: 10px;
+        color: #f7f7f7;
+        background-color: #30475e;
+        text-align: center;
+        font-weight: lighter;
     }
 }
 
@@ -566,6 +605,11 @@ header {
 
 /*MOBILE VIEW*/
 @media screen and (max-width: 575px){
+    body { 
+        overflow-x: hidden; 
+        -webkit-font-smoothing: 
+        antialiased; margin: 0;
+    }
 
     nav {
         background-color: #cceabb;
@@ -816,7 +860,8 @@ header {
     }
     
     .about .projects {
-        margin: 50px 40px;
+        padding: 50px 40px;
+        overflow: hidden;
     }
     
     .about .projects h3 {
@@ -832,7 +877,6 @@ header {
         display: flex;   
         flex-direction: row;  
         justify-content: flex-start;
-        width: 574px;
     }
     
     .about .slider-wrapper div {
@@ -901,7 +945,7 @@ header {
     
     .about div.overlay-blue {
         width: 100%; 
-        height: 75%; 
+        height: 200%; 
         position: absolute; 
         top: 0; 
         transition: 0.5s ease all;
@@ -1024,7 +1068,10 @@ header {
     }
     
     .skills .tools .icon-tech {
+        position: relative;
         display: flex;
+        width: 90%;
+        left: 5%;
         align-items: center;
         justify-content: center;
     }
@@ -1032,6 +1079,7 @@ header {
     .skills .tools .icon-tech img {
         position: relative;
         display: inline;
+        width: 20%;
         margin: 10px 10px;
     }
     
@@ -1115,7 +1163,41 @@ header {
         display: inline;
         position: relative;
         margin: 20px;
+        width: 90%;
         box-shadow: 0 40px 40px 0 darkgray;
+    }
+
+    .contacts {
+        position: relative;
+        width: 100%;
+        display: inline-block;
+        margin: 40px 0 0 0;
+    }
+
+    .contacts .email {
+        position: relative;
+        width: 80%;
+        left: 10%;
+        margin: 50px 0 0 0;
+    }
+
+    .contacts .email .form-control{
+        box-shadow: 0 10px 10px 0 darkgray;
+        background-color: #cceabb;
+        border: #cceabb;
+    }
+
+    .contacts h2{
+        text-align: center;
+        font-weight: 700;
+        margin-left: 0;
+    }
+
+    .contacts .email .btn-email {
+        border-color: #30475e;
+        background-color: #30475e;
+        color: #f7f7f7;
+        float: right;
     }
 
     footer {

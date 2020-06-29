@@ -6,30 +6,49 @@ const main = () => {
     {name: 'Kalikesia-01', title: 'laravel', image: './img/kalikesia-01.JPG'},
     {name: 'Kalikesia-02', title: 'laravel', image: './img/kalikesia-02.JPG'},
     {name: 'Kalikesia-03', title: 'laravel', image: './img/kalikesia-03.JPG'},
-    {name: 'Kp-01', title: 'vuejs', image: './img/kp-01.png'},
-    {name: 'Kp-02', title: 'vuejs', image: './img/kp-02.png'},
-    {name: 'Kp-03', title: 'vuejs', image: './img/kp-03.png'},
+    {name: 'Kp-01', title: 'js', image: './img/kp-01.png'},
+    {name: 'Kp-02', title: 'js', image: './img/kp-02.png'},
+    {name: 'Kp-03', title: 'js', image: './img/kp-03.png'},
     {name: 'Php-01', title: 'ci', image: './img/php-01.JPG'},
     {name: 'Php-02', title: 'ci', image: './img/php-02.JPG'},
     {name: 'Php-03', title: 'ci', image: './img/php-03.JPG'},
-    {name: 'Sentimen-01', title: 'vuejs', image: './img/sentimen-01.png'},
-    {name: 'Sentimen-02', title: 'vuejs', image: './img/sentimen-02.png'},
-    {name: 'Sentimen-03', title: 'vuejs', image: './img/sentimen-03.png'},
-    {name: 'Sentimen-04', title: 'vuejs', image: './img/sentimen-04.png'},
+    {name: 'Sentimen-01', title: 'js', image: './img/sentimen-01.png'},
+    {name: 'Sentimen-02', title: 'js', image: './img/sentimen-02.png'},
+    {name: 'Sentimen-03', title: 'js', image: './img/sentimen-03.png'},
+    {name: 'Sentimen-04', title: 'js', image: './img/sentimen-04.png'},
     {name: 'Covid-01', title: 'js', image: './img/covid-01.png'},
     {name: 'Covid-02', title: 'js', image: './img/covid-02.png'},
   ];
 
-  img.forEach( item => {
-    const imgPortofolioElement = document.querySelector('.showcase');
-    const imgElement = document.createElement('div.img-element');
-    //console.log(imgPortofolioElement)
-    imgElement.innerHTML = "";
-    imgElement.innerHTML += `
-      <img class="img-fluid capt" src="${item.image}">
-    `;
-    imgPortofolioElement.appendChild(imgElement)
-  });
+  // img.forEach( item => {
+  //   const imgPortofolioElement = document.querySelector('.showcase');
+  //   const imgElement = document.createElement('div.img-element');
+  //   imgElement.innerHTML = "";
+  //   imgElement.innerHTML += `
+  //     <img class="img-fluid capt" src="${item.image}">
+  //   `;
+  //   imgPortofolioElement.appendChild(imgElement)
+  // });
+
+  //FILTER PORTFFOLIO
+  const loadJs = () => {
+    const jsFiltered = img.filter( item => {
+      return item.title === 'js'
+    });
+    const showcaseElement = document.querySelector('.showcase');
+    showcaseElement.innerHTML = "";
+    jsFiltered.forEach(item => {
+      const imgElement = document.createElement('div.img-element');
+      imgElement.innerHTML = "";
+      imgElement.innerHTML += `
+        <img class="img-fluid capt" src="${item.image}">
+      `;
+      showcaseElement.appendChild(imgElement)
+    })
+    const buttonItem = document.querySelector('#js');
+    buttonItem.className += ' actived';
+    console.log(buttonItem)
+  }
 
   //DATA FROM API
   const loadData = (resolve, reject) => {
@@ -76,7 +95,7 @@ const main = () => {
     }
   };
 
-  //JQUERY
+  //JQUERY SLIDER
   (function($) {
     $(document).ready(function() {
       var s           = $('section .slider'),
@@ -92,8 +111,8 @@ const main = () => {
           slide_image = s.find('.slide-image img'),
           sTotalWidth = sCount * sWidth;
       
-      sWrapper.css('width', sTotalWidth);
-      sWrapper.css('width', sTotalWidth);
+      sWrapper.css('width', sWidth);
+      sWrapper.css('width', sWidth);
       
       var clickCount  = 0;
       
@@ -124,6 +143,10 @@ const main = () => {
   })(jQuery);
 
   $('.overlay').addClass('overlay-blue');
+
+  //FOR EVERY FILTER BUTTON
+  const filterJavascript = document.querySelector('#js');
+  filterJavascript.addEventListener('click', loadJs);
 };
 
 export default main;

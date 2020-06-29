@@ -8,12 +8,12 @@
 <body>
     <header>
         <nav class="nav justify-content-center">
-            <a class="resume" href="#projects">PERSONAL RESUME</a>
+            <a class="resume" href="#about">PERSONAL RESUME</a>
             <ul class="top-nav" id="topNav">
-                <a href="index.html">About</a>
-                <a href="portfolio.html">Portfolio</a>
-                <a href="skills.html">Skills</a>
-                <a href="#Contact">Contact</a>
+                <a href="#about">About</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#skills">Skills</a>
+                <a href="#contacts">Contact</a>
             </ul>
             <a href="javascript:void(0);" class="icon" onclick="collapseFunction()">
                 <i class="fa fa-bars"></i>
@@ -28,13 +28,13 @@
                         <h2>I'm HANIFAH</h2>
                         <p>a Front-End Web Developer</p>
                         <div class="icons">
-                            <i class="fab fa-github"></i>
-                            <i class="fab fa-medium-m"></i>
-                            <i class="fas fa-envelope"></i>
-                            <i class="fab fa-twitter"></i>
-                            <i class="fab fa-linkedin-in"></i>
+                            <a href="https://github.com/hanemath"><i class="fab fa-github"></i></a>
+                            <a href="https://medium.com/@nifahanifa"><i class="fab fa-medium-m"></i></a>
+                            <a href="#email"><i class="fas fa-envelope"></i></a>
+                            <a href="https://twitter.com/hanemath"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.linkedin.com/in/hnfhxx/"><i class="fab fa-linkedin-in"></i></a>
                         </div>
-                        <button class="btn-black">HIRE ME</button>
+                        <button class="btn-black" href="#email">HIRE ME</button>
                     </div>
                     <div class="ava">
                         <img class="front-img img-fluid" src="./img/hanifah-ava.jpeg">
@@ -113,7 +113,7 @@
                                     <div class="slide-date">DEC.2019</div>
                                     <div class="slide-title">STARTUP KALIKESIA, UGM.</div>
                                     <div class="slide-text">
-                                        He joined a health tech startup that focused on developing an online learning platform for health workers called Kalikesia. 
+                                        She joined a health-tech startup that focused on developing an online learning platform for health workers called Kalikesia. 
                                     </div>
                                 </div>	
                             </div>
@@ -231,15 +231,49 @@
             <article id="portfolio" class="portfolio">
                 <h2>SHOWCASE</h2>
                 <section class="filters">
-                    <button type="button" class="btn btn-outline-secondary actived">All</button>
-                    <button type="button" class="btn btn-outline-secondary">CodeIgniter</button>
-                    <button type="button" class="btn btn-outline-secondary">Laravel</button>
-                    <button type="button" class="btn btn-outline-secondary">Vue JS</button>
-                    <button type="button" class="btn btn-outline-secondary">PHP</button>
-                    <button type="button" class="btn btn-outline-secondary">Javascript</button>
+                    <button type="button" id="all" class="btn btn-outline-secondary actived">All</button>
+                    <button type="button" id="ci" class="btn btn-outline-secondary">CodeIgniter</button>
+                    <button type="button" id="laravel" class="btn btn-outline-secondary">Laravel</button>
+                    <button type="button" id="vuejs" class="btn btn-outline-secondary">Vue JS</button>
+                    <button type="button" id="ci" class="btn btn-outline-secondary">PHP</button>
+                    <button type="button" id="js" class="btn btn-outline-secondary">Javascript</button>
                 </section>
                 <section>
-                    <div class="showcase"></div>
+                    <div class="showcase">
+                        <img class="img-fluid capt" src="./img/kalikesia-01.JPG">
+                        <img class="img-fluid capt" src="./img/kalikesia-02.JPG">
+                        <img class="img-fluid capt" src="./img/kalikesia-03.JPG">
+                        <img class="img-fluid capt" src="./img/kp-01.png">
+                        <img class="img-fluid capt" src="./img/kp-02.png">
+                        <img class="img-fluid capt" src="./img/kp-03.png">
+                        <img class="img-fluid capt" src="./img/php-01.JPG">
+                        <img class="img-fluid capt" src="./img/php-02.JPG">
+                        <img class="img-fluid capt" src="./img/php-03.JPG">
+                        <img class="img-fluid capt" src="./img/sentimen-01.png">
+                        <img class="img-fluid capt" src="./img/sentimen-02.png">
+                        <img class="img-fluid capt" src="./img/sentimen-03.png">
+                        <img class="img-fluid capt" src="./img/sentimen-04.png">
+                        <img class="img-fluid capt" src="./img/covid-01.png">
+                        <img class="img-fluid capt" src="./img/covid-02.png">
+                    </div>
+                </section>
+            </article>
+            <article id="contacts" class="contacts">
+                <section>
+                    <div class="email" id="email">
+                        <h2>Want to Reach Me?</h2>
+                        <form>
+                            <div class="form-group">
+                                <label for="inputEmail">Your Email</label>
+                                <input type="email" class="form-control" id="inputEmail" placeholder="name@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputContent">What's up?</label>
+                                <textarea class="form-control" id="inputContent" rows="5"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-email">Send Email</button>
+                        </form>
+                    </div>
                 </section>
             </article>
         </div>
