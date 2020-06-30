@@ -626,9 +626,11 @@ header {
     }
 
     nav .top-nav{
+        position: relative;
+        width: 50%;
         list-style-type: none;
         text-align: left;
-        display: inline;
+        display: inline-block;
     }
     
     nav .top-nav a{
@@ -638,16 +640,34 @@ header {
         font-weight: 600;
         font-family: 'Nunito', sans-serif;
         text-decoration: none;
+        position: relative;
+        width: 100%;
+        display: inline-block;
     }
 
     nav .top-nav a:not(:first-child) {
         display: none;
     }
 
+    nav .top-nav.responsive {
+        position: relative;
+    }
+
+    nav .top-nav.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    nav .top-nav.responsive a {
+        float: left;
+        display: block;
+        text-align: left;
+    }
+
     nav a.icon {
         position: relative;
         width: 5%;
-        left: 15%;
         display: block;
     }
 
@@ -670,21 +690,6 @@ header {
         font-size : 20px;
         font-weight: 600;
         font-family: 'Raleway', sans-serif;
-    }
-
-    nav .top-nav.responsive {
-        position: relative;
-    }
-    nav .top-nav.responsive .icon {
-        position: absolute;
-        right: 0;
-        top: 0;
-    }
-
-    nav .top-nav.responsive a {
-        float: none;
-        display: block;
-        text-align: left;
     }
 
     main{
@@ -1139,6 +1144,13 @@ header {
         border-color: #30475e;
         background-color: #30475e;
         color: #f7f7f7;
+    }
+
+    .portfolio .filters .btn.actived.inactive {
+        margin: 10px 10px;
+        border-color: #30475e;
+        background-color: #f7f7f7;
+        color: #30475e;
     }
     
     .portfolio .filters .btn:hover {

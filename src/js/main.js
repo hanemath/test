@@ -6,29 +6,19 @@ const main = () => {
     {name: 'Kalikesia-01', title: 'laravel', image: './img/kalikesia-01.JPG'},
     {name: 'Kalikesia-02', title: 'laravel', image: './img/kalikesia-02.JPG'},
     {name: 'Kalikesia-03', title: 'laravel', image: './img/kalikesia-03.JPG'},
-    {name: 'Kp-01', title: 'js', image: './img/kp-01.png'},
-    {name: 'Kp-02', title: 'js', image: './img/kp-02.png'},
-    {name: 'Kp-03', title: 'js', image: './img/kp-03.png'},
-    {name: 'Php-01', title: 'ci', image: './img/php-01.JPG'},
-    {name: 'Php-02', title: 'ci', image: './img/php-02.JPG'},
-    {name: 'Php-03', title: 'ci', image: './img/php-03.JPG'},
-    {name: 'Sentimen-01', title: 'js', image: './img/sentimen-01.png'},
-    {name: 'Sentimen-02', title: 'js', image: './img/sentimen-02.png'},
-    {name: 'Sentimen-03', title: 'js', image: './img/sentimen-03.png'},
-    {name: 'Sentimen-04', title: 'js', image: './img/sentimen-04.png'},
+    {name: 'Kp-01', title: 'vuejs', image: './img/kp-01.png'},
+    {name: 'Kp-02', title: 'vuejs', image: './img/kp-02.png'},
+    {name: 'Kp-03', title: 'vuejs', image: './img/kp-03.png'},
+    {name: 'Php-01', title: 'php', image: './img/php-01.JPG'},
+    {name: 'Php-02', title: 'php', image: './img/php-02.JPG'},
+    {name: 'Php-03', title: 'php', image: './img/php-03.JPG'},
+    {name: 'Sentimen-01', title: 'vuejs', image: './img/sentimen-01.png'},
+    {name: 'Sentimen-02', title: 'vuejs', image: './img/sentimen-02.png'},
+    {name: 'Sentimen-03', title: 'vuejs', image: './img/sentimen-03.png'},
+    {name: 'Sentimen-04', title: 'vuejs', image: './img/sentimen-04.png'},
     {name: 'Covid-01', title: 'js', image: './img/covid-01.png'},
     {name: 'Covid-02', title: 'js', image: './img/covid-02.png'},
   ];
-
-  // img.forEach( item => {
-  //   const imgPortofolioElement = document.querySelector('.showcase');
-  //   const imgElement = document.createElement('div.img-element');
-  //   imgElement.innerHTML = "";
-  //   imgElement.innerHTML += `
-  //     <img class="img-fluid capt" src="${item.image}">
-  //   `;
-  //   imgPortofolioElement.appendChild(imgElement)
-  // });
 
   //FILTER PORTFFOLIO
   const loadJs = () => {
@@ -47,8 +37,62 @@ const main = () => {
     })
     const buttonItem = document.querySelector('#js');
     buttonItem.className += ' actived';
-    console.log(buttonItem)
   }
+
+  const loadPhp = () => {
+    const phpFiltered = img.filter( item => {
+      return item.title === 'php'
+    });
+    const showcaseElement = document.querySelector('.showcase');
+    showcaseElement.innerHTML = "";
+    phpFiltered.forEach(item => {
+      const imgElement = document.createElement('div.img-element');
+      imgElement.innerHTML = "";
+      imgElement.innerHTML += `
+        <img class="img-fluid capt" src="${item.image}">
+      `;
+      showcaseElement.appendChild(imgElement)
+    })
+    const buttonItem = document.querySelector('#php');
+    buttonItem.className += ' actived';
+  }
+
+  const loadVuejs = () => {
+    const vueFiltered = img.filter( item => {
+      return item.title === 'vuejs'
+    });
+    const showcaseElement = document.querySelector('.showcase');
+    showcaseElement.innerHTML = "";
+    vueFiltered.forEach(item => {
+      const imgElement = document.createElement('div.img-element');
+      imgElement.innerHTML = "";
+      imgElement.innerHTML += `
+        <img class="img-fluid capt" src="${item.image}">
+      `;
+      showcaseElement.appendChild(imgElement)
+    })
+    const buttonItem = document.querySelector('#vuejs');
+    buttonItem.className += ' actived';
+  }
+
+  const loadLaravel = () => {
+    const laravelFiltered = img.filter( item => {
+      return item.title === 'laravel'
+    });
+    const showcaseElement = document.querySelector('.showcase');
+    showcaseElement.innerHTML = "";
+    laravelFiltered.forEach(item => {
+      const imgElement = document.createElement('div.img-element');
+      imgElement.innerHTML = "";
+      imgElement.innerHTML += `
+        <img class="img-fluid capt" src="${item.image}">
+      `;
+      showcaseElement.appendChild(imgElement)
+    })
+    const buttonItem = document.querySelector('#laravel');
+    buttonItem.className += ' actived';
+  }
+
 
   //DATA FROM API
   const loadData = (resolve, reject) => {
@@ -147,6 +191,18 @@ const main = () => {
   //FOR EVERY FILTER BUTTON
   const filterJavascript = document.querySelector('#js');
   filterJavascript.addEventListener('click', loadJs);
+
+  const filterPhp = document.querySelector('#php');
+  filterPhp.addEventListener('click', loadPhp); 
+
+  const filterVuejs = document.querySelector('#vuejs');
+  filterVuejs.addEventListener('click', loadVuejs);
+
+  const filterLaravel = document.querySelector('#laravel');
+  filterLaravel.addEventListener('click', loadLaravel);
+
+  const buttonNav = document.querySelector('#icon-nav');
+  buttonNav.addEventListener('click', collapseFunction);
 };
 
 export default main;
