@@ -1,4 +1,4 @@
-# sentiment-analysis
+# personal-resume
 
 > A project developed as a prerequisite for applying as a front end developer at synapsis.id
 
